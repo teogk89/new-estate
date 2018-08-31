@@ -19,7 +19,12 @@ class Transaction extends Model
         'client_id',
         'lawyer_id',
         'sale_id',
-        'referral_id'
+        'referral_id',
+        'admin_status',
+        'commission',
+        'hst_number',
+        'reason_status',
+        'status'
         
     ];
 
@@ -43,7 +48,8 @@ class Transaction extends Model
     		'accept_date',
     		'completion_date',
     		'deposit_date',
-    		'trade_record'
+    		'trade_record',
+            'close_date'
     	];
 
     	foreach($fill as $f){

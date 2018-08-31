@@ -29,6 +29,8 @@ Route::group(['middleware'=>['auth']],function(){
 	Route::get('/','MainController@index');
 	Route::get('/transaction','MainController@transaction')->name('new-transaction');
 	Route::post('/saveStep','MainController@saveStep');
+
+	Route::get('/user/forms','MainController@userForms')->name("user-form");
 	Route::post('/upload','MainController@uploadFile');
 
 	Route::get('/home', 'HomeController@index')->name('home');
@@ -57,9 +59,11 @@ Route::group(['middleware'=>['auth']],function(){
 
 Route::group(['middleware'=>['auth','admin']],function(){
 
-
+	Route::get('/admin/trans/{status}','AdminController@transStatus')->name('admin-trans-status');
 	Route::get('/admin/transactions','AdminController@transaction')->name('admin-transaction');
 	Route::get('/admin/transaction/view/{id}','AdminController@viewTrans')->name('admin-tranction-view-single');
+	Route::get('/admin/commission','AdminController@commission')->name('admin-commission');
+	Route::post('/admin/transactions','AdminController@transactionSave')->name('admin-transaction-save');
 	Route::get('/admin/sales','AdminController@viewSales')->name("admin-sales");
 
 	Route::get('/admin/form','AdminController@form')->name('admin-form-view');

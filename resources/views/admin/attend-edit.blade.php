@@ -84,7 +84,7 @@
 
 @push('scripts')
 <script src="/assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="/assets/js/pages/base_tables_datatables.js"></script>
+<script src="/assets/js/pages/base_tables_datatables.js"></script>
 <script>
 
 

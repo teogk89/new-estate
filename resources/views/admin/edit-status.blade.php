@@ -1,6 +1,7 @@
-<form id="my-form" enctype="multipart/form-data" class="form-horizontal" action="{{route('admin-form-save')}}" method="post"">
+<form id="my-form" enctype="multipart/form-data" class="form-horizontal" action="{{route('admin-transaction-save')}}" method="post"">
 				   {{ csrf_field() }}
-				<input type="hidden" name="id" value=""/>  
+                 {{ csrf_field() }}   
+				<input type="hidden" name="id" value="{{$trans->id}}"/>  
 				<input type="hidden" name="mode" value=""/>
                 
                 <div class="form-group col-md-6">
@@ -9,11 +10,7 @@
                         <input class="editable form-control" type="text" id="example-hf-email" name="commission"
 
 
-                        value="<?php 
-
-                       
-
-                        ?>"
+                        value="{{$trans->commission}}"
                         >
                     </div>
                 </div>
@@ -22,14 +19,10 @@
                 <div class="form-group col-md-6">
                     <label class="col-md-4 control-label" for="example-hf-email">HST</label>
                     <div class="col-md-6">
-                        <input class="editable form-control" type="text" id="example-hf-email" name="hst"
+                        <input class="editable form-control" type="text" id="example-hf-email" name="hst_number"
 
 
-                        value="<?php 
-
-                       
-
-                        ?>"
+                        value="{{$trans->hst_number}}"
                         >
                     </div>
                 </div>
@@ -38,7 +31,7 @@
                 <div class="form-group col-md-6">
                     <label class="col-md-4 control-label" for="example-select">Status</label>
                     <div class="col-md-6">
-                        <select class="form-control" name="example-select" size="1">
+                        <select class="form-control" name="status" size="1">
                             <option value="0" disabled>Please select</option>
                             @foreach(config('view.admin_status') as $m=>$n)
 
@@ -59,16 +52,12 @@
                 <div class="clearfix"></div>
                
                 <div class="form-group col-md-6">
-                    <label class="col-md-4 control-label" for="example-hf-email">Close Date</label>
+                    <label class=" col-md-4 control-label" for="example-hf-email">Close Date</label>
                     <div class="col-md-6">
-                        <input class="editable form-control" type="text" id="example-hf-email" name="name" placeholder=""
+                        <input class="js-datetimepicker editable form-control" type="text" id="example-hf-email" name="close_date" placeholder=""
 
 
-                        value="<?php 
-
-                       
-
-                        ?>"
+                        value="{{ $trans->dateOut('close_date')  }}"
                         >
                     </div>
                 </div>
@@ -77,7 +66,7 @@
                   <div class="form-group col-md-6">
                     <label class="col-md-4 control-label" for="example-hf-email">Reason</label>
                     <div class="col-md-6">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="reason_status">{{$trans->reason_status}}</textarea>
                     </div>
                 </div>
                 <div class="form-group col-md-6"></div>

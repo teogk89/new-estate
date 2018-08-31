@@ -210,4 +210,13 @@ class MainController extends Controller
 
     	return view("main.test");
     }
+
+
+    public function userForms(Request $request){
+
+        return view("main.user-forms",[
+            'forms'=>\App\Model\Form::where('type','admin')->get()
+            ]
+        );
+    }
 }

@@ -21,8 +21,35 @@ class AdminController extends Controller
             
         ]);
     }
+    public function transStatus(Request $request,$status){
 
 
+        return view('admin.trans-status',[
+            'trans'=> Transaction::where('status',$status)->get(),
+            'status'=>$status
+        ]);
+    }
+    public function commission(Request $request){
+
+
+        return view('admin.commission',[
+            'trans'=>Transaction::all()
+        ]);
+    }
+
+    public function transactionSave(Request $request){
+
+       
+
+        $trans = Transaction::find($request->input('id'));
+
+        $trans->fill($request->all());
+        $trans->getDate($request->all());
+        $trans->save();
+
+        return redirect()->route("admin-tranction-view-single",['id'=>$trans->id]);
+
+    }
     public function adminDelete($type,$id){
 
         switch($type){

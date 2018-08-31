@@ -82,7 +82,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href=""><i class="si si-note"></i>
+                                    <a href="{{route('user-form')}}"><i class="si si-note"></i>
                                         <span class="sidebar-mini-hide">Form</span>
                                     </a>
                                 </li>
@@ -111,10 +111,35 @@
                                         <span class="sidebar-mini-hide">Dashboard</span>
                                     </a>
                                 </li>
+                                <li class="">
+                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                        <i class="si si-layers"></i>
+                                        <span class="sidebar-mini-hide">Transaction by status</span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="{{route('admin-trans-status',['status'=>'open'])}}">Open</a>
+                                        </li>
+                                         <li>
+                                            <a href="{{route('admin-trans-status',['status'=>'closed'])}}">Closed</a>
+                                        </li>
+                                         <li>
+                                            <a href="{{route('admin-trans-status',['status'=>'terminated'])}}">Terminated</a>
+                                        </li>
+                                    </ul>
+                                </li>    
                                 <li>
                                     <a href="{{route('admin-sales')}}"><i class="si si-speedometer">
                                     </i>
                                         <span class="sidebar-mini-hide">Sales</span>    
+                                    </a>
+                                    
+                                   
+                                </li>
+                                <li>
+                                    <a href="{{route('admin-commission')}}"><i class="si si-calculator">
+                                    </i>
+                                        <span class="sidebar-mini-hide">Commission</span>    
                                     </a>
                                     
                                    
@@ -126,6 +151,7 @@
                                 </li>
                                     <li>
                                     <a href="{{route('admin-events')}}">
+                                         <i class="si si-calendar"></i>
                                        <span class="sidebar-mini-hide">Events</span>     
 
                                     </a>
