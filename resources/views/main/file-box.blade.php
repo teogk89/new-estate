@@ -17,7 +17,7 @@ if(isset($trans_type->id)){
 	<div class="col-md-12">
 		<a target="_blank" data-name="{{$file->file_name}}" class="btn btn-info" href="{{config('filesystems.disks.public.url').$file->path}}"><i class="fa fa-download"></i> Download</a>   
 		
-		@if ($mode != "view")
+		@if (isset($mode) && $mode != "view")
 		<button data-id="{{$file->id}}" class="del-btn btn btn-danger" type="button"><i class="fa fa-times"></i> Delete</button>
 		@endif
 	</div>	
