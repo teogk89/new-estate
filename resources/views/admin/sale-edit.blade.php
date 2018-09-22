@@ -82,7 +82,7 @@
                         <td>{{$f->id}}</td>
                         <td>{{$f->name}}</td>
                         <td>
-                            <a target="_blank" href="/storage/{{$f->path}}" class="btn btn-minw btn-primary" type="button">View</a>
+                            <a target="_blank" href="{{config('filesystems.disks.public.url').$f->path}}" class="btn btn-minw btn-primary" type="button">View</a>
                         </td>
                         <td>{{$f->created_at}}</td>
                         <td>{{$f->des}}</td>

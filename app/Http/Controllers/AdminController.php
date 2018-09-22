@@ -99,7 +99,7 @@ class AdminController extends Controller
     }
     public function transaction(Request $request){
 
-    	$trans = Transaction::all();
+    	$trans = Transaction::where('status','!=','...')->get();
 
 
     	return view('admin.transaction',[

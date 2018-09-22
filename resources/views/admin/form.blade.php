@@ -56,7 +56,7 @@
 					<td>
 						{{$t->name}}
 					</td>
-					<td><a target="_blank" href="/storage/{{$t->path}}"class="btn btn-minw btn-primary" type="button">View</a></td>
+					<td><a target="_blank" href="{{config('filesystems.disks.public.url').$t->path}}"class="btn btn-minw btn-primary" type="button">View</a></td>
 					<td><a href="{{ route('admin-form-edit',['id'=>$t->id])}}"class="btn btn-minw btn-primary" type="button">Edit</a></td>
 
 					<td>

@@ -657,8 +657,8 @@ margin-left: 20px;
                 li.attr('href','/storage/'+data[0]);
                 li.attr("target","_blank");
                 li.append(i);*/
-
-                var li = that.viewFileButton('/storage/'+data[0]);
+                var url = "{{ config('filesystems.disks.public.url') }}"
+                var li = that.viewFileButton(url+data[0]);
                 td.append(li);
 
                 form.find('input[name="'+data[2]+'"]').first().replaceWith($(data[1]));

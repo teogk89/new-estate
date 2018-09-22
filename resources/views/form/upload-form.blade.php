@@ -46,7 +46,7 @@
                         <input type="file" name="file_path">
                         @else
 
-                        <a target="_blank" href="/storage/{{$form->path}}"class="btn btn-sm btn-primary" type="button">View</a>
+                        <a target="_blank" href="{{config('filesystems.disks.public.url').$form->path}}"class="btn btn-sm btn-primary" type="button">View</a>
 
                         @endif
                         
